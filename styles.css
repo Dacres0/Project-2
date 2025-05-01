@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #f8f9fa;
   color: #212529;
   margin: 0;
@@ -9,175 +9,112 @@ body {
 
 /* Header Styles */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #dee2e6;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #343a40;
+  color: #ffffff;
 }
 
-/* Logo and Navigation Links */
-.header .logo {
-  margin-right: 2rem;
-}
-
-.header nav {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Navigation Links */
 .header .nav-link {
   font-weight: 500;
+  font-size: 1.1rem;
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
 .header .nav-link:hover {
-  color: #0056b3;
-  text-decoration: underline;
+  color: #00bcd4;
 }
 
-.header .logo a {
-  font-weight: 600;
+/* Main Section */
+main {
+  padding-top: 50px;
 }
 
-/* Search Bar */
-.form-inline {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  flex-grow: 1;  /* This allows the form to take up the remaining space */
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #343a40;
 }
 
-.form-inline .form-control {
-  width: 100%; /* Ensures the search input takes up the full available space */
-  border-radius: 0.25rem;
-}
-
-.form-inline button {
-  width: auto;
-}
-
-/* Carousel Styles */
-.carousel-inner img {
-  height: 450px;
-  object-fit: cover;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  padding: 10px;
-}
-
-/* Featured Auction Cards */
+/* Auction Cards */
 .card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: none;
-  border-radius: 0.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
-  height: 200px;
+  height: 250px;
   object-fit: cover;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .card-body {
   text-align: center;
 }
 
-/* Buttons */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.text-primary {
+  color: #00bcd4;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
 .btn-primary {
-  background-color: #007bff;
+  background-color: #00bcd4;
   border: none;
-  transition: background-color 0.2s ease;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* Payment Form */
-#paymentForm {
-  max-width: 600px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-#paymentForm label {
-  font-weight: 600;
-  display: block;
-  margin-top: 1rem;
-}
-
-#paymentForm input,
-#paymentForm select {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-}
-
-#paymentForm button {
-  margin-top: 1.5rem;
-  width: 100%;
+  background-color: #00796b;
 }
 
 /* Footer */
 footer {
   background-color: #343a40;
   color: #ffffff;
-  padding: 1rem;
-  text-align: center;
   font-size: 0.9rem;
-  margin-top: 2rem;
+  text-align: center;
+  padding: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .carousel-inner img {
-    height: 300px;
-  }
-
-  .header .form-inline {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .header .form-inline input,
-  .header .form-inline button {
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-inner img {
-    height: 250px;
+  .card {
+    border-radius: 8px;
   }
 
   .card-img-top {
-    height: 160px;
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-body {
+    padding: 1.5rem;
   }
 }
 
