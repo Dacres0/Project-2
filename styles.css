@@ -24,6 +24,25 @@ body {
   color: #00bcd4;
 }
 
+/* Carousel Styles */
+.carousel-inner img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+}
+
 /* Main Section */
 main {
   padding-top: 50px;
@@ -33,6 +52,7 @@ h2 {
   font-size: 2rem;
   font-weight: 500;
   color: #343a40;
+  margin-bottom: 30px;
 }
 
 /* Auction Cards */
@@ -115,6 +135,10 @@ footer {
 
   .card-body {
     padding: 1.5rem;
+  }
+
+  .carousel-inner img {
+    height: 300px;
   }
 }
 
