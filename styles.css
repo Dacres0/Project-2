@@ -20,7 +20,7 @@ body {
 
 /* Logo and Navigation Links */
 .header .logo {
-  flex-grow: 1; /* Takes up remaining space to the left */
+  margin-right: 2rem;
 }
 
 .header nav {
@@ -46,13 +46,18 @@ body {
 /* Search Bar */
 .form-inline {
   display: flex;
-  justify-content: flex-end; /* Align the search bar to the right */
+  justify-content: flex-end;
   gap: 0.5rem;
+  flex-grow: 1;  /* This allows the form to take up the remaining space */
 }
 
 .form-inline .form-control {
-  width: auto;
+  width: 100%; /* Ensures the search input takes up the full available space */
   border-radius: 0.25rem;
+}
+
+.form-inline button {
+  width: auto;
 }
 
 /* Carousel Styles */
