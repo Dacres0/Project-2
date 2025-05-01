@@ -83,7 +83,8 @@ As Linda, I want an easy-to-use pricing tool, so I can set a fair price for my v
 
 ### Wireframes
 
-![Wireframes](assets/images/wireframes.png)
+!![Picture2](https://github.com/user-attachments/assets/997c2c6a-199a-4c7e-ad85-37135f6b9a8d)
+
 
 - Initial wireframes used a basic grid and carousel layout.
 - Revised to include stronger CTAs and clearer section spacing.
@@ -118,6 +119,10 @@ As Linda, I want an easy-to-use pricing tool, so I can set a fair price for my v
 - Individual auction product pages (planned)
 - Future enhancements: filters by category and live countdown timers
 
+### webpage 3: Payment 
+
+- payment with ethereum or debit card
+- bid on any product
 ### Footer
 
 - Simple copyright notice
@@ -156,11 +161,11 @@ As Linda, I want an easy-to-use pricing tool, so I can set a fair price for my v
 ### Automated Testing
 
 #### W3C HTML Validator
-- ✅ Passed with no major errors.
+-  Passed with no major errors.
 - Screenshot: `assets/images/html-validator.png`
 
 #### W3C CSS Validator
-- ✅ Valid CSS.
+-  Valid CSS.
 - Screenshot: `assets/images/css-validator.png`
 
 #### Lighthouse
