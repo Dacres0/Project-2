@@ -189,8 +189,8 @@ As Linda, I want an easy-to-use pricing tool, so I can set a fair price for my v
 
 #### Testing User Stories
 
-- Alex was able to browse, select items, and view bid options using Ethereum.
-- Linda was able to upload and price items with placeholder pricing tools.
+- Alex was able to browse, select items, and view bid options using Ethereum. (i acted as Alex)
+- Linda was able to upload and price items with placeholder pricing tools. (i acted as Linda)
 
 #### Full Testing
 
