@@ -18,13 +18,17 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.header .logo,
+/* Logo and Navigation Links */
+.header .logo {
+  flex-grow: 1; /* Takes up remaining space to the left */
+}
+
 .header nav {
   display: flex;
-  align-items: center;
   gap: 1rem;
 }
 
+/* Navigation Links */
 .header .nav-link {
   font-weight: 500;
   transition: color 0.3s ease;
@@ -41,8 +45,8 @@ body {
 
 /* Search Bar */
 .form-inline {
-  margin-left: auto;
   display: flex;
+  justify-content: flex-end; /* Align the search bar to the right */
   gap: 0.5rem;
 }
 
@@ -171,5 +175,4 @@ footer {
     height: 160px;
   }
 }
-
 
