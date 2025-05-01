@@ -1,4 +1,3 @@
-<!-- payment.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,51 +8,86 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 </head>
 <body>
+  <!-- Header -->
   <header class="bg-dark text-white py-4">
     <div class="container">
       <h1 class="h4">Confirm Your Bid</h1>
     </div>
   </header>
 
+  <!-- Main Content -->
   <main class="container my-5">
     <div class="card p-4 shadow-lg">
-      <h2 class="mb-4">Bid Details</h2>
+      <h2 class="mb-4">Item Details</h2>
       <p><strong>Item:</strong> <span id="itemName">Loading...</span></p>
-      <p><strong>Your Bid:</strong> <span id="itemBid">Loading...</span></p>
+      <p><strong>Starting Bid:</strong> <span id="startingBid">Loading...</span></p>
 
       <hr />
 
-      <form>
+      <!-- Bid Form -->
+      <form id="bidForm">
         <div class="form-group">
           <label for="ethAddress">Your Ethereum Wallet Address</label>
-          <input type="text" id="ethAddress" class="form-control" placeholder="0x..." required>
+          <input type="text" id="ethAddress" name="ethAddress" class="form-control" placeholder="0x..." required>
         </div>
         <div class="form-group">
-          <label for="confirmBid">Confirm Amount (ETH)</label>
-          <input type="number" id="confirmBid" class="form-control" placeholder="Amount" required>
+          <label for="yourBid">Your Bid (ETH)</label>
+          <input type="number" step="0.01" min="0" id="yourBid" name="yourBid" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-success w-100">Submit Payment</button>
+        <button type="submit" class="btn btn-success w-100">Submit Bid</button>
       </form>
+
+      <!-- Confirmation Message -->
+      <div id="confirmation" class="alert alert-success mt-4 d-none"></div>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
     <p class="mb-0">&copy; 2025 Auction House. All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
+    // Extract URL parameters
     const params = new URLSearchParams(window.location.search);
     const item = params.get("item");
     const bid = params.get("bid");
 
+    // Display item and bid info
     if (item && bid) {
       document.getElementById("itemName").textContent = decodeURIComponent(item);
-      document.getElementById("itemBid").textContent = `${bid} ETH`;
-      document.getElementById("confirmBid").value = bid;
+      document.getElementById("startingBid").textContent = `${bid} ETH`;
+      document.getElementById("yourBid").value = bid;
     }
+
+    // Handle form submission
+    document.getElementById("bidForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const ethAddress = document.getElementById("ethAddress").value.trim();
+      const yourBid = document.getElementById("yourBid").value.trim();
+
+      if (!ethAddress || !yourBid) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      // Simulate bid confirmation
+      const confirmation = document.getElementById("confirmation");
+      confirmation.classList.remove("d-none");
+      confirmation.innerHTML = `
+        Bid submitted successfully!<br>
+        <strong>Item:</strong> ${decodeURIComponent(item)}<br>
+        <strong>Your Bid:</strong> ${yourBid} ETH<br>
+        <strong>Wallet:</strong> ${ethAddress}
+      `;
+
+      // Reset form
+      document.getElementById("bidForm").reset();
+    });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
