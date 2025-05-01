@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BitBay - Home</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-  <!-- Carousel control style fix -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <style>
     .carousel-control-prev,
     .carousel-control-next {
       top: 50%;
       transform: translateY(-50%);
-      bottom: auto;
     }
 
     .carousel-control-prev-icon,
@@ -22,37 +18,38 @@
       background-color: rgba(0, 0, 0, 0.5);
       border-radius: 50%;
       padding: 10px;
-      background-size: 100% 100%;
     }
   </style>
 </head>
 <body>
-  <header class="header">
+  <header class="header border-bottom bg-light">
     <div class="container d-flex justify-content-between align-items-center py-3">
-      <div class="logo-nav d-flex align-items-center">
-        <h1 class="logo"><a href="index.html" class="text-dark text-decoration-none">BitBay</a></h1>
+      <div class="d-flex align-items-center">
+        <h1 class="h3 mb-0">
+          <a href="index.html" class="text-dark text-decoration-none">BitBay</a>
+        </h1>
         <nav class="ml-4">
-          <a href="index.html" class="nav-link d-inline-block">Home</a>
-          <a href="auction.html" class="nav-link d-inline-block">View Auctions</a>
+          <a href="index.html" class="nav-link d-inline-block px-2 text-primary">Home</a>
+          <a href="auction.html" class="nav-link d-inline-block px-2 text-primary">View Auctions</a>
         </nav>
       </div>
-      <div class="search-bar d-flex">
-        <input type="text" class="form-control" placeholder="Search auctions...">
-        <button class="btn btn-primary ml-2">Search</button>
-      </div>
+      <form class="form-inline">
+        <input type="text" class="form-control mr-2" placeholder="Search auctions..." />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
     </div>
   </header>
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://www.pictureserver1.auctionninja.com/pictureserver/clearinghouseestatesales/Pictures/IMG_1198_1744046499389.jpeg" class="d-block w-100" alt="Antique gold watch">
+        <img src="https://www.pictureserver1.auctionninja.com/pictureserver/clearinghouseestatesales/Pictures/IMG_1198_1744046499389.jpeg" class="d-block w-100" alt="Antique gold watch" />
       </div>
       <div class="carousel-item">
-        <img src="https://via.placeholder.com/800x400?text=Antique+Vase" class="d-block w-100" alt="Antique Vase">
+        <img src="https://via.placeholder.com/800x400?text=Antique+Vase" class="d-block w-100" alt="Antique Vase" />
       </div>
       <div class="carousel-item">
-        <img src="https://t4.ftcdn.net/jpg/04/39/83/09/360_F_439830979_DAwn7eNZYZDDZN8mmHsLzIvyMqDiGWxK.jpg" class="d-block w-100" alt="Rare painting">
+        <img src="https://t4.ftcdn.net/jpg/04/39/83/09/360_F_439830979_DAwn7eNZYZDDZN8mmHsLzIvyMqDiGWxK.jpg" class="d-block w-100" alt="Rare painting" />
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -70,26 +67,26 @@
       <h2 class="mb-4">Featured Auctions</h2>
       <div class="row">
         <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="images/vase.jpg" class="card-img-top" alt="Antique Vase">
+          <div class="card h-100 shadow-sm">
+            <img src="images/vase.jpg" class="card-img-top" alt="Antique Vase" />
             <div class="card-body">
-              <p class="card-text">Antique Vase - Starting Bid: 1 ETH</p>
+              <p class="card-text font-weight-bold">Antique Vase - Starting Bid: 1 ETH</p>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="images/watch.jpg" class="card-img-top" alt="Vintage Watch">
+          <div class="card h-100 shadow-sm">
+            <img src="images/watch.jpg" class="card-img-top" alt="Vintage Watch" />
             <div class="card-body">
-              <p class="card-text">Vintage Watch - Starting Bid: 2 ETH</p>
+              <p class="card-text font-weight-bold">Vintage Watch - Starting Bid: 2 ETH</p>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Rare Painting">
+          <div class="card h-100 shadow-sm">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Rare Painting" />
             <div class="card-body">
-              <p class="card-text">Rare Painting - Starting Bid: 3 ETH</p>
+              <p class="card-text font-weight-bold">Rare Painting - Starting Bid: 3 ETH</p>
             </div>
           </div>
         </div>
@@ -97,7 +94,7 @@
     </section>
   </main>
 
-  <footer class="bg-dark text-white text-center py-3">
+  <footer class="bg-dark text-white text-center py-3 mt-5">
     <p class="mb-0">&copy; 2025 BitBay. All rights reserved.</p>
   </footer>
 
@@ -106,4 +103,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
