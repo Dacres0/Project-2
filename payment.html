@@ -7,21 +7,21 @@
   <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 </head>
-<body>
+<body class="text-dark bg-white">
   <!-- Header -->
-  <header class="bg-dark text-white py-4">
+  <header class="bg-light text-dark py-4 border-bottom">
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="h4 mb-0">BitBay</h1>
       <nav>
-        <a href="index.html" class="nav-link text-white d-inline-block px-3">Home</a>
-        <a href="auction.html" class="nav-link text-white d-inline-block px-3">Auctions</a>
-        <a href="payment.html" class="nav-link text-white d-inline-block px-3">Payment</a>
+        <a href="index.html" class="nav-link text-dark d-inline-block px-3">Home</a>
+        <a href="auction.html" class="nav-link text-dark d-inline-block px-3">Auctions</a>
+        <a href="payment.html" class="nav-link text-dark d-inline-block px-3">Payment</a>
       </nav>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="container my-5">
+  <main class="container my-5 text-dark">
     <div class="card p-4 shadow-lg">
       <h2 class="mb-4">Confirm Your Bid</h2>
       <p><strong>Item:</strong> <span id="itemName">Loading...</span></p>
@@ -80,18 +80,17 @@
       </form>
 
       <!-- Confirmation Message -->
-      <div id="confirmation" class="alert alert-success mt-4 d-none"></div>
+      <div id="confirmation" class="alert alert-success mt-4 d-none text-dark"></div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
+  <footer class="bg-light text-center py-3 text-dark border-top">
     <p class="mb-0">&copy; 2025 Auction House. All rights reserved.</p>
   </footer>
 
   <!-- Script -->
   <script>
-    // Get item data from URL
     const params = new URLSearchParams(window.location.search);
     const item = params.get("item");
     const bid = params.get("bid");
@@ -103,14 +102,12 @@
     document.getElementById("ethBid").value = bid;
     document.getElementById("cardBid").value = bid;
 
-    // Toggle forms
     document.getElementById("paymentMethod").addEventListener("change", function () {
       const method = this.value;
       document.getElementById("ethForm").classList.toggle("d-none", method !== "eth");
       document.getElementById("cardForm").classList.toggle("d-none", method !== "card");
     });
 
-    // ETH form submission
     document.getElementById("ethForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const address = document.getElementById("ethAddress").value;
@@ -118,7 +115,6 @@
       showConfirmation(item, amount, `ETH Wallet: ${address}`);
     });
 
-    // Card form submission
     document.getElementById("cardForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const name = document.getElementById("cardName").value;
@@ -141,4 +137,3 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
