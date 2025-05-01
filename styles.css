@@ -27,7 +27,13 @@ body {
 /* Carousel Styles */
 .carousel-inner img {
   height: 500px;
-  object-fit: cover;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  object-position: center center; /* Centers the image */
+}
+
+/* Special Treatment for the First Image (Painting) */
+.carousel-item:first-child img {
+  object-position: center center; /* Adjust focus on the painting */
 }
 
 .carousel-control-prev,
@@ -115,30 +121,3 @@ footer {
   background-color: #343a40;
   color: #ffffff;
   font-size: 0.9rem;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .card {
-    border-radius: 8px;
-  }
-
-  .card-img-top {
-    height: 200px;
-  }
-
-  .card-title {
-    font-size: 1.3rem;
-  }
-
-  .card-body {
-    padding: 1.5rem;
-  }
-
-  .carousel-inner img {
-    height: 300px;
-  }
-}
-
