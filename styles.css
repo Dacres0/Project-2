@@ -9,9 +9,20 @@ body {
 
 /* Header Styles */
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
   background-color: #ffffff;
   border-bottom: 1px solid #dee2e6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header .logo,
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .header .nav-link {
@@ -29,6 +40,12 @@ body {
 }
 
 /* Search Bar */
+.form-inline {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
 .form-inline .form-control {
   width: auto;
   border-radius: 0.25rem;
