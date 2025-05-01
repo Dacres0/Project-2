@@ -14,7 +14,7 @@ BitBay is a modern, crypto-friendly online auction platform designed for collect
 
 ### User Stories (US)
 
-#### 🧑‍💼 User Persona 1: Alex – The Crypto Buyer
+#### User Persona 1: Alex – The Crypto Buyer
 
 **User Story 1: Crypto Spending**  
 As Alex, I want to quickly link my crypto wallet to online stores, so I can make secure payments without manually entering details every time.
@@ -37,7 +37,7 @@ As Alex, I want to be able to bid on products via Ethereum, so I do not need to 
 
 ---
 
-#### 👩 User Persona 2: Linda – The Vintage Seller
+####  User Persona 2: Linda – The Vintage Seller
 
 **User Story: Product Price Setting**  
 As Linda, I want an easy-to-use pricing tool, so I can set a fair price for my vintage items without confusion.
@@ -206,12 +206,18 @@ Browsers tested:
 ---
 
 ### Bugs
+was some issues with the repisitory 
+issues with website launching
+issues with images
 
 #### Solved Bugs
 - Fixed image URLs that did not render (added complete Unsplash URLs with parameters)
+- i created a new one uploaded the files and it started working
+- search engine had to catch up for images to update
+- website fixed itself
 
 #### Known Bugs
-- Currency converter and wallet integration are not yet functional (front-end only)
+
 
 ---
 
