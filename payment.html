@@ -1,0 +1,95 @@
+<!-- Payment Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction House - Payment</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">BitBay</a></h1>
+            <nav style="margin-left: 1rem;">
+                <a href="index.html">Home</a>
+                <a href="auction.html">View Auctions</a>
+                <a href="payment.html">Payment</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <form id="paymentForm">
+            <label for="amount">Amount (ETH):</label>
+            <input type="number" id="amount" name="amount" step="0.01" required>
+
+            <label for="paymentMethod">Choose Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod">
+                <option value="ethereum">Ethereum</option>
+                <option value="debit">Debit Card</option>
+            </select>
+
+            <div id="ethereumPayment" style="display: none;">
+                <button type="button" onclick="makeEthereumPayment()">Pay with Ethereum</button>
+            </div>
+
+            <div id="debitPayment" style="display: none;">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+
+                <label for="expiryDate">Expiry Date:</label>
+                <input type="month" id="expiryDate" name="expiryDate" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <button type="submit">Pay with Debit Card</button>
+            </div>
+        </form>
+
+        <script>
+            const paymentMethod = document.getElementById('paymentMethod');
+            const ethereumPayment = document.getElementById('ethereumPayment');
+            const debitPayment = document.getElementById('debitPayment');
+
+            paymentMethod.addEventListener('change', () => {
+                if (paymentMethod.value === 'ethereum') {
+                    ethereumPayment.style.display = 'block';
+                    debitPayment.style.display = 'none';
+                } else if (paymentMethod.value === 'debit') {
+                    ethereumPayment.style.display = 'none';
+                    debitPayment.style.display = 'block';
+                }
+            });
+
+            async function makeEthereumPayment() {
+                if (typeof window.ethereum !== 'undefined') {
+                    const web3 = new Web3(window.ethereum);
+                    await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    const accounts = await web3.eth.getAccounts();
+                    const amount = document.getElementById('amount').value;
+                    const recipient = '0xYourEthereumAddressHere'; // Replace with your Ethereum address
+
+                    try {
+                        await web3.eth.sendTransaction({
+                            from: accounts[0],
+                            to: recipient,
+                            value: web3.utils.toWei(amount, 'ether')
+                        });
+                        alert('Payment successful!');
+                    } catch (error) {
+                        console.error(error);
+                        alert('Payment failed.');
+                    }
+                } else {
+                    alert('Ethereum wallet not detected. Please install MetaMask.');
+                }
+            }
+        </script>
+    </main>
+    <footer>
+        <p>&copy; 2025 Auction House. All rights reserved.</p>
+    </footer>
+</body>
+</html>
